@@ -1,21 +1,25 @@
-function Check()
-{
+function check(){
     var str=document.getElementById("palstring").value;
-    var n=str.split("");
-    str=str.split("");
-    for(var i=0,j=n.length-1;i<=j;i++,j--)
-    {
-        var t=n[i];
-        n[i]=n[j];
-        n[j]=t;
+    if(!(isNaN(str)))
+    alert("Given input is a number");
+    else{
+    var str1="";
+    var a=0;
+    for(i=str.length-1;i>=0;i--){
+    str1=str1+str[i];
+}
+for(i=0;i<str.length;i++){
+    if(str[i]==str1[i])
+    a=1;
+    else 
+    a=0;
+}
+if(a==1)
+alert(" string is Palindrome");
+else
+alert("string is not a palindrome");
     }
-    if(str==n.join())
-    alert("The string is palindrome");
-    else
-    alert("The string is not a palindrome");
-    }
-
-
+}
 
 
 
