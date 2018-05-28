@@ -1,26 +1,22 @@
-var a=prompt("Enter an array of Strings:");
-var x=a.split(",");
-var result=new Array();
-var s=x[0].slice(1,-1).toLowerCase();
-if(checkpal(s)==1)
-    document.write(x[0]+",");
-for(k=1,s=x[k];k<x.length;k++,s=x[k])
-{
-    s=s.slice(2,-1).toLowerCase();
-    if(checkpal(s)==1)
-        document.write(x[k]+",");
-}
-function checkpal(p)
-{
-    var y=p.split("");
-    p=p.split("");
-    for(var i=0,j=y.length-1;i<=j;i++,j--){
-        var temp=y[i];
-        y[i]=y[j];
-        y[j]=temp;
+function validate(){
+    var str=document.getElementById("newval").value;
+    var ar=[];
+    var result=[];
+    var obj=JSON.parse(str);
+    for(key in obj){
+        ar.push(obj[key]);
     }
-    if(p==y.join())
-        return 1;
-    else
-        return 0;
+    document.write("Palindrome strings are  ");
+for(var i=0;i<ar.length;i++){
+        ar[i]=ar[i].toLowerCase();
+        if(ar[i]==ar[i].split("").reverse().join(""))
+        result.push(ar[i]);
+    }
+for(var i=0;i<result.length;i++)
+{
+if(i==result.length-1)
+document.write(result[i]);
+else
+document.write(result[i]+",");
+}
 }
